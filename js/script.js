@@ -18,7 +18,6 @@ quotes.push({quote: "The greatest teacher, failure is", source: "Yoda", citation
 quotes.push({quote: "If you torture the data long enough, it will confess", source: "Ronald H. Coase", citation: "", year: "", tag: "Real Person"}) ;
 //console.log(quotes) ;
 
-
 /***
  * `getRandomQuote` as arrow function
  *  picks a random quote from an array of -global- quote objects 
@@ -58,9 +57,10 @@ function printQuote() {
   document.querySelector("#quote-box").innerHTML = htmlStr + "</p>" ;
 }
 
-
 /***
  * click event listener for the print quote button
 ***/
 
-document.getElementById('load-quote').addEventListener("click", printQuote, false);
+document.getElementById('load-quote').addEventListener("click", setInterval(printQuote,2000), false) ;
+
+
