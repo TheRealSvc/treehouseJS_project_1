@@ -41,18 +41,15 @@ function printQuote() {
   if (quote.citation.length > 0 ) {
    htmlStr += `<span class="citation">  ${quote["citation"]} </span>` ;
   }
-  
   if (quote.year.length > 0 ) {
     htmlStr += `<span class="year"> ${quote["year"]} </span>` ;
    }
-  
   if (quote.tag.length > 0 ) {
     htmlStr += `<span class="tag"> , ${quote["tag"]} </span>` ;
    }
-
   let rgb = getRandomColor() ;
   console.log(htmlStr) ;
-  let box = document.getElementById("quote-box") ;
+  let box = document.getElementById('containerbox') ;
   box.style.backgroundColor = `rgb(${rgb[0]},${rgb[1]},${rgb[2]})` ;
   document.querySelector("#quote-box").innerHTML = htmlStr + "</p>" ;
 }
@@ -61,6 +58,5 @@ function printQuote() {
  * click event listener for the print quote button
 ***/
 
-document.getElementById('load-quote').addEventListener("click", setInterval(printQuote,2000), false) ;
-
-
+document.getElementById('load-quote').addEventListener("click", printQuote, false) ;
+setInterval(printQuote,6000) ; // updates every 6 seconds if no click in between 
